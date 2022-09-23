@@ -1,9 +1,4 @@
 ﻿using System;
-using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
-using System.Threading;
-using Microsoft.IdentityModel.Protocols.OpenIdConnect;
-using Microsoft.IdentityModel.Tokens;
 
 namespace JWTSamples
 {
@@ -19,9 +14,6 @@ namespace JWTSamples
 			Console.WriteLine(EncodingExtensions.EncodeToBase64String(decodeFromBase64String));
 			var token = AzureJwtHelper.GetClientCredentialAccessToken("082ab154-8415-4f2a-b83b-e2dfc0b14991",
 				"9sT8Q~NIr36-MYN6dWXO_wXToruRld-EWJhP.boz", "api://082ab154-8415-4f2a-b83b-e2dfc0b14991/.default");
-			var azKeys = AzureJwtHelper.AzureKeys;
-
-			Console.WriteLine(azKeys);
 			var tvp = AzureJwtHelper.GetTokenValidationParameters(
 				"https://sts.windows.net/5b8e5feb-bab9-44e1-a340-9f72cf0bd4ec/",
 				"api://082ab154-8415-4f2a-b83b-e2dfc0b14991");
