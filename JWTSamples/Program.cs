@@ -28,7 +28,7 @@ namespace JWTSamples
 			var securityToken = AzureJwtHelper.ValidateToken(token, tvp);
 			Console.WriteLine(securityToken.ValidFrom + " " + securityToken.ValidTo);
 			var user = new User
-				{ Username = "balasm01", Created = DateTime.Now, Expiry = DateTime.Now.AddMinutes(-20) };
+				{ Username = "balasm01", Created = DateTime.Now, Expiry = DateTime.Now.AddMinutes(20) };
 			user = SecurityExtensions.PopulateJwtSecurityToken(user);
 
 			Console.WriteLine(user.SecurityToken.AsJsonString());
